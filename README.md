@@ -294,11 +294,3 @@ Error responses:
 | User enumeration prevention | Generic responses on forgot-password |
 | CORS | Configured allowed origins, methods, headers |
 | Session management | Device limit enforcement, session tracking |
-
-## Learning Guide
-
-See [LEARNING_GUIDE.md](LEARNING_GUIDE.md) for a comprehensive, section-by-section walkthrough of every component — designed for interns and developers learning Spring Boot security.
-
-## License
-
-This project is licensed under the ISC License.

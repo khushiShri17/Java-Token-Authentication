@@ -1,0 +1,42 @@
+server:
+  port: ${PORT:5000}
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI}
+      auto-index-creation: true
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT:587}
+    username: ${SMTP_USER}
+    password: ${SMTP_PASS}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+app:
+  jwt:
+    access-token:
+      secret: ${JWT_ACCESS_TOKEN_SECRET}
+      expires-in: ${ACCESS_TOKEN_EXPIRESIN:15m}
+    refresh-token:
+      secret: ${JWT_REFRESH_TOKEN_SECRET}
+      expires-in: ${REFRESH_TOKEN_EXPIRESIN:7d}
+  security:
+    max-devices-per-user: ${MAX_DEVICES_PER_USER:2}
+    max-login-attempts: 5
+    lockout-duration-minutes: 30
+  urls:
+    base: ${BASE_URL:http://localhost:5000}
+    frontend: ${FRONTEND_URL:http://localhost:3000}
+  mail:
+    sender-email: ${MAILTRAP_SENDEREMAIL:noreply@example.com}
+
+logging:
+  level:
+    org.mongodb.driver: WARN
+    org.springframework.data.mongodb: WARN
